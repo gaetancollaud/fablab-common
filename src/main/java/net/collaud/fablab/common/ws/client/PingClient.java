@@ -1,12 +1,12 @@
-package net.collaud.fablab.webservice.client;
+package net.collaud.fablab.common.ws.client;
 
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import net.collaud.fablab.webservice.WebServicePath;
-import net.collaud.fablab.webservice.response.PingResponse;
+import net.collaud.fablab.common.ws.WebServicePath;
+import net.collaud.fablab.common.ws.response.PingResponse;
 
 public class PingClient {
 	private final WebTarget webTarget;

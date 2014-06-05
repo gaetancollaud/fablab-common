@@ -1,4 +1,4 @@
-package net.collaud.fablab.webservice.response;
+package net.collaud.fablab.common.ws.response;
 
 import java.util.ArrayList;
 import java.util.List;

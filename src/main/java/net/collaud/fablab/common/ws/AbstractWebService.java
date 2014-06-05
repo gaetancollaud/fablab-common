@@ -1,4 +1,4 @@
-package net.collaud.fablab.webservice;
+package net.collaud.fablab.common.ws;
 
 /**
  *
