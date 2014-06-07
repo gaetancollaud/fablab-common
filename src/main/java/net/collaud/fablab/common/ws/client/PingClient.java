@@ -1,14 +1,14 @@
 package net.collaud.fablab.common.ws.client;
 
-import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
 import net.collaud.fablab.common.ws.WebServicePath;
+import net.collaud.fablab.common.ws.exception.WebServiceException;
 import net.collaud.fablab.common.ws.response.PingResponse;
 
-public class PingClient {
+public class PingClient  extends AbstractClient{
+
 	private final WebTarget webTarget;
 	private final Client client;
 
@@ -17,23 +17,13 @@ public class PingClient {
 		webTarget = client.target(url).path(WebServicePath.BASE_URL).path(WebServicePath.PING_URL);
 	}
 
-	public PingResponse ping(String content) throws ClientErrorException {
+	public PingResponse ping(String content) throws WebServiceException {
 		WebTarget resource = webTarget;
 		resource = resource.queryParam(WebServicePath.PARAM_CONTENT, content);
-		return resource.request(MediaType.APPLICATION_JSON).get(PingResponse.class);
+		return request(resource, PingResponse.class);
 	}
 
 	public void close() {
 		client.close();
 	}
-	
-	public static void main(String[] args) {
-		PingClient dc = new PingClient("localhost:8083");
-		PingResponse pingResponse = dc.ping("badsfas");
-		System.out.println("ping received : " +pingResponse.getContent());
-		if(pingResponse.isError()){
-			System.out.println("error "+pingResponse.getErrors().get(0));
-		}
-	}
-	
 }
