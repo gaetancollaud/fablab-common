@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class PingResponse extends AbstractResponse {
 
-	private final String content;
+	private String content;
+
+	public PingResponse() {
+	}
 
 	public PingResponse(String content) {
 		this.content = content;
@@ -17,5 +20,9 @@ public class PingResponse extends AbstractResponse {
 
 	public String getContent() {
 		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 }

@@ -14,5 +14,5 @@ final public class WebServicePath {
 	
 	public static final String PARAM_TOKEN = "token";
 	public static final String PARAM_RFID = "rfid";
-	public static final String PARAM_CONTENT = "rfid";
+	public static final String PARAM_CONTENT = "content";
 }
