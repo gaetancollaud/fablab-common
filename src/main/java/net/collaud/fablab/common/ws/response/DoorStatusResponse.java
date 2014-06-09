@@ -8,24 +8,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author gaetan
  */
 @XmlRootElement
-public class DoorStatusRequest extends AbstractResponse implements Serializable {
+public class DoorStatusResponse extends AbstractResponse implements Serializable {
 
 	private boolean doorOpen;
 	private boolean alarmOn;
-	private String lastRfid;
 
-	public DoorStatusRequest() {
+	public DoorStatusResponse() {
 	}
 
-	public DoorStatusRequest(boolean doorOpen, boolean alarmOn) {
+	public DoorStatusResponse(boolean doorOpen, boolean alarmOn) {
 		this.doorOpen = doorOpen;
 		this.alarmOn = alarmOn;
-	}
-
-	public DoorStatusRequest(boolean doorOpen, boolean alarmOn, String lastRfid) {
-		this.doorOpen = doorOpen;
-		this.alarmOn = alarmOn;
-		this.lastRfid = lastRfid;
 	}
 
 	public boolean isDoorOpen() {
@@ -44,11 +37,4 @@ public class DoorStatusRequest extends AbstractResponse implements Serializable 
 		this.alarmOn = alarmOn;
 	}
 
-	public String getLastRfid() {
-		return lastRfid;
-	}
-
-	public void setLastRfid(String lastRfid) {
-		this.lastRfid = lastRfid;
-	}
 }

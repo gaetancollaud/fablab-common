@@ -16,4 +16,7 @@ final public class WebServicePath {
 	public static final String PARAM_TOKEN = "token";
 	public static final String PARAM_RFID = "rfid";
 	public static final String PARAM_CONTENT = "content";
+	public static final String PARAM_DOOR_OPEN = "doorOpen";
+	public static final String PARAM_ALARM_ON = "alarmOn";
+	
 }

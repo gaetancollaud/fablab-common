@@ -20,7 +20,7 @@ public class PingClient  extends AbstractClient{
 	public PingResponse ping(String content) throws WebServiceException {
 		WebTarget resource = webTarget;
 		resource = resource.queryParam(WebServicePath.PARAM_CONTENT, content);
-		return request(resource, PingResponse.class);
+		return requestJson(resource, PingResponse.class);
 	}
 
 	public void close() {

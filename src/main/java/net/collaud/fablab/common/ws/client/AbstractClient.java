@@ -12,12 +12,16 @@ import net.collaud.fablab.common.ws.exception.WebServiceException;
  */
 abstract public class AbstractClient {
 	
-	public static final String MEDIA_TYPE = MediaType.APPLICATION_JSON;
+	protected <T> T requestJson(WebTarget resource, Class<T> clazz) throws WebServiceException{
+		return request(MediaType.APPLICATION_JSON, resource, clazz);
+	}
+	protected <T> T requestXml(WebTarget resource, Class<T> clazz) throws WebServiceException{
+		return request(MediaType.APPLICATION_XML, resource, clazz);
+	}
 	
-	
-	protected <T> T request(WebTarget resource, Class<T> clazz) throws WebServiceException{
+	private <T> T request(String mediaType, WebTarget resource, Class<T> clazz) throws WebServiceException{
 		try {
-			return resource.request(MEDIA_TYPE).get(clazz);
+			return resource.request(mediaType).get(clazz);
 		} catch (ProcessingException | WebApplicationException ex) {
 			throw new WebServiceException("Error when requesting "+resource.getUri(), ex);
 		}
