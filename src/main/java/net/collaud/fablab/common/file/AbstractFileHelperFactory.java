@@ -10,8 +10,8 @@ import java.util.Map;
  * @author gaetan
  */
 abstract public class AbstractFileHelperFactory {
-	
-	public static final int HELPER_MAX_AGE = 5*60*1000;
+
+	public static final int HELPER_MAX_AGE = 5 * 60 * 1000;
 
 	private final Map<Integer, FileHelper> cache;
 
@@ -20,12 +20,16 @@ abstract public class AbstractFileHelperFactory {
 	}
 
 	/**
-	 * Get the helper associated to its id. Will create a new one if this is the first time and put it in cache. The next time the helper will be accessed by the cache.
+	 * Get the helper associated to its id. Will create a new one if this is the first time and put
+	 * it in cache. The next time the helper will be accessed by the cache.
+	 * If the helper exceed the max age, it will be recreted.
+	 *
 	 * @param id
 	 * @return
+	 * @see HELPER_MAX_AGE
 	 * @throws FileHelperException If the helper cannot be created.
 	 */
-	protected FileHelper get(Integer id) throws FileHelperException{
+	protected FileHelper get(Integer id) throws FileHelperException {
 		FileHelper helper = cache.get(id);
 		if (helper == null || helper.getAge() > HELPER_MAX_AGE) {
 			//helper never existed or is too old
@@ -35,7 +39,13 @@ abstract public class AbstractFileHelperFactory {
 		return helper;
 	}
 
-	abstract protected FileHelper create(Integer key);
+	/**
+	 * This method has to create the FileHelper asscociated with this id
+	 *
+	 * @param id
+	 * @return
+	 */
+	abstract protected FileHelper create(Integer id);
 
 	protected FileHelper createPropertiesFileHelper(String file) throws FileHelperException {
 		try {
@@ -46,6 +56,12 @@ abstract public class AbstractFileHelperFactory {
 		}
 	}
 
+	/**
+	 * Create and returne a simple unknown helper exception
+	 *
+	 * @param id
+	 * @return
+	 */
 	protected FileHelperException getUnknowFileHelperException(int id) {
 		return new FileHelperException("Unknown helper with id " + id);
 	}
