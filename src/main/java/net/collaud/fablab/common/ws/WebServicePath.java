@@ -9,6 +9,7 @@ final public class WebServicePath {
 	
 	public static final String DOOR_URL  = "door";
 	public static final String DOOR_REQUEST_OPEN = "requestopen";
+	public static final String DOOR_STATUS = "status";
 	
 	public static final String PING_URL = "ping";
 	
