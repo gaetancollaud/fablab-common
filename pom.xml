@@ -51,8 +51,16 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:git@github.com:gaetancollaud/fablab-common.git</connection>
-		<url>scm:git:git@github.com:gaetancollaud/fablab-common.git</url>
-		<developerConnection>scm:git:git@github.com:gaetancollaud/fablab-common.git</developerConnection>
+		<connection>scm:git:ssh://github.com/gaetancollaud/fablab-common.git</connection>
+		<url>https://github.com/gaetancollaud/fablab-common.git</url>
+		<developerConnection>scm:git:ssh://git@github.com/gaetancollaud/fablab-common.git</developerConnection>
 	</scm>
+
+<distributionManagement>
+  <repository>
+    <id>internal.repo</id>
+    <name>Temporary Staging Repository</name>
+    <url>file://${project.build.directory}/mvn-repo</url>
+  </repository>
+</distributionManagement>
 </project>
