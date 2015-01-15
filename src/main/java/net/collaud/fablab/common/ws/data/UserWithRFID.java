@@ -2,7 +2,7 @@ package net.collaud.fablab.common.ws.data;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  */
 public class UserWithRFID {
 

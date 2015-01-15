@@ -2,7 +2,7 @@ package net.collaud.fablab.common.ws.exception;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  */
 public class WebServiceException extends Exception {
 

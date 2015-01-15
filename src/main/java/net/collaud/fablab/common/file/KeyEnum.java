@@ -2,7 +2,7 @@ package net.collaud.fablab.common.file;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  */
 public interface KeyEnum {
 

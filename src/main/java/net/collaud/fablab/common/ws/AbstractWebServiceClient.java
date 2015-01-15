@@ -2,7 +2,7 @@ package net.collaud.fablab.common.ws;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  */
 abstract public class AbstractWebServiceClient {
 	

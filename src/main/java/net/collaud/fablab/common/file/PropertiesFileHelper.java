@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  * @param <T>
  */
 public class PropertiesFileHelper<T extends KeyEnum> extends FileHelper<T> {

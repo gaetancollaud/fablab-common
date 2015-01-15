@@ -2,7 +2,7 @@ package net.collaud.fablab.common.ws;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  */
 final public class WebServicePath {
 	public static final String BASE_URL = "api";

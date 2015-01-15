@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  */
 abstract public class AbstractFileHelperFactory {
 

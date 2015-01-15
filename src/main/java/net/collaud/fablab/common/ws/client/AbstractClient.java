@@ -8,7 +8,7 @@ import net.collaud.fablab.common.ws.exception.WebServiceException;
 
 /**
  *
- * @author gaetan
+ * @author Gaetan Collaud <gaetancollaud@gmail.com>
  */
 abstract public class AbstractClient {
 	
